@@ -1,0 +1,25 @@
+.header {
+    padding: 40px 0 40px 0;
+    margin-inline: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    height:68px;
+}
+
+.nav ul { 
+    display: flex;
+}
+
+.nav__link {
+    margin-left:40px;
+    font-size: 24px;
+}
+
+.nav__link a.active {
+    /* border-bottom: 1px solid #FF6060; */
+    text-decoration: underline;
+}

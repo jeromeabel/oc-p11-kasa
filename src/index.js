@@ -2,11 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 
-// Main Router
-import KasaRouter from "./pages/KasaRouter";
+import AppRouter from "./AppRouter";
+import App from './App';
+
+import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={KasaRouter} />
+    {/* <RouterProvider router={AppRouter} /> */}
+    <App />
   </React.StrictMode>
 );

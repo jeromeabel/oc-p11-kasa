@@ -1,0 +1,13 @@
+.accordion {
+    background-color: #F6F6F6;
+    padding:20px;
+}
+
+.accordion__title {
+    background-color: #FF6060;
+    color:white;
+    padding:20px;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight:500;
+}
