@@ -1,13 +1,45 @@
 .accordion {
     background-color: #F6F6F6;
-    padding:20px;
+    border-radius: 10px;
+}
+
+.accordion__header {
+    background-color: #FF6060;
+    color:white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
 }
 
 .accordion__title {
-    background-color: #FF6060;
-    color:white;
-    padding:20px;
-    border-radius: 5px;
     font-size: 24px;
     font-weight:500;
+    display: inline;
+    padding: 20px;
+}
+
+.accordion__btn {
+    color:white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.accordion__btn:hover {
+    opacity: 0.8;
+}
+
+.accordion__body {
+    padding:20px;
+}
+
+.rotate0 {
+    transform: rotate(0);
+    transition: transform 400ms;
+}
+.rotate180 {
+    transform: rotate(180deg);
+    transition: transform 400ms;
 }

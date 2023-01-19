@@ -3,7 +3,6 @@
     padding:50px;
     background-color: #F7F7F7;
     border-radius: 25px;
-
 }
 
 .grid {
@@ -11,4 +10,5 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
     justify-content: space-between;
+
 }
