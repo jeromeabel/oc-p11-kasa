@@ -3,11 +3,11 @@
 @import '../../styles/shared';
 
 .accordion {
-    background-color: #F6F6F6;
+    background-color: $color-secondary;
     border-radius: 10px;
 
     &__header {
-        background-color: $color-red;
+        background-color: $color-primary;
         color:white;
         border-radius: 10px;
         display: flex;

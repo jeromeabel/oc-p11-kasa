@@ -1,2 +1,25 @@
-$color-red:#FF6060;
+:root {
+	--color-primary: #FF6060;
+	--color-light-grey: #F7F7F7;
+	--color-black: #000000;
+	--color-white: #ffffff;
+}
+
+
+// var(--color-black);
+
+
+// Colors
+$color-primary:#FF6060;
+$color-secondary:#F7F7F7;
+
+// Font
 $font-m: 18px;
+
+// Screen sizes
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1300px;
+$screen-full: 1400px;

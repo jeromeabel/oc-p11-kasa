@@ -1,24 +1,24 @@
-.Location {
+.location {
     display: flex;
     flex-direction: column;
     gap:20px;
 
 }
 
-.Location__header {
+.location__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
    
 }
 
-.Location__heading {
+.location__heading {
     display: flex;
     flex-direction: column;
     gap:10px;
 }
 
-.Location__filters {
+.location__filters {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,12 +26,12 @@
 }
 
 
-.Location__host{
+.location__host{
     display: flex;
     align-items: center;
     gap:20px;
 }
-.Location__host img {
+.location__host img {
     border-radius: 50%;
     height:64px;
     width: 64px;
@@ -40,13 +40,13 @@
 
 
 
-.Location__description {
+.location__description {
    display: flex; 
    gap: 50px;
    margin: 30px 0 30px 0;
 }
 
-.Location__title {
+.location__title {
     font-weight: 500;
     font-size: 36px;
 }

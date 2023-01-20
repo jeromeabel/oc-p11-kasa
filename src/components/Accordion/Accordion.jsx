@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import './Accordion.scss'
 
-export default function Accordion( {title, text, list }) {
+export default function Accordion( {title, children, list }) {
     const [ isVisible, setIsVisible ] = useState(false)
     
     return (
@@ -12,20 +12,16 @@ export default function Accordion( {title, text, list }) {
                 <button
                     type="button"
                     className={`accordion__btn ${isVisible ? "rotate0" : "rotate180"}`}
-                    ariaExpanded="false"
+                    aria-expanded="false"
                     onClick={() => setIsVisible(!isVisible)}>
-                    <i className="fa-sharp fa-solid fa-chevron-up"></i>
-                        {/* { isVisible ?  
-                            <i className="fa-sharp fa-solid fa-chevron-up"></i> : 
-                            <i className="fa-sharp fa-solid fa-chevron-down"></i> 
-                        } */}
+                    <i className="fa-sharp fa-solid fa-chevron-down"></i>
                 </button>
             </div>
-            {/* <div  className={`accordion__body ${isVisible ? "hideY" : "showY"}`}>
-                    <p>{text}</p>
-            </div> */}
+            <div className={`accordion__body ${isVisible ? "showY" : "hideY"}`}>
+                {children}
+            </div>
 
-            { isVisible && text &&
+            {/* { isVisible && text &&
                 <div className='accordion__body'>
                     <p>{text}</p>
                 </div>
@@ -34,7 +30,7 @@ export default function Accordion( {title, text, list }) {
                 <div className='accordion__body'>
                     <ul>{list.map( (item, index) => <li key={`${item}`}>{item}</li>)}</ul>
                 </div>
-            }   
+            }    */}
         </div>
     )
 }

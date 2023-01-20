@@ -1,52 +1,63 @@
-import {  useParams } from "react-router-dom";
-
-import Caroussel from "../../components/Caroussel/Caroussel";
+import { useParams } from "react-router-dom";
+import { useFetchDataById } from '../../hook/fetchData';
+import { useSetTitle } from '../../hook/setTitle';
+import Caroussel from "./Caroussel/Caroussel";
 import Accordion from "../../components/Accordion/Accordion";
 
 import './Location.scss';
 
-import jsonData from '../../data/logements.json';
-
-
 export default function Location() {
+    
+    // Get Data
+    const { locationId } = useParams();
+    const { dataById:data, loading, error } = useFetchDataById('/logements.json', locationId);
 
-    const { LocationId } = useParams();
-    const Locations = [...jsonData];
-
-    // Filtrer
-    const Location = Locations.find( (item) => item.id === LocationId )
-
+    // Set Title
+    let title = "Logement"
+    if( !loading && !error ) title += ` - ${data.title}`;
+    useSetTitle(title);
+    
     return (
-        
-        <article className="Location">
-            <Caroussel title={Location.title} pictures={Location.pictures} />
-            <div className="Location__header">
-                <div className="Location__heading">
-                    <h1 className="Location__title">{Location.title}</h1>
-                    <p>{Location.location}</p>
+        <article className="location">
+
+            { loading && <div>LOADING ... </div> }
+            { error && <div>ERROR : {error} </div> }
+            { data &&  (
+            <>
+            <Caroussel title={data.title} pictures={data.pictures} />
+            
+            <div className="location__header">
+
+                <div className="location__heading">
+                    <h1 className="location__title">{data.title}</h1>
+                    <p>{data.location}</p>
+                    <div className="location__tags">
+                        {data.tags.map( (item, index) => <span className="location__tag"key={`${item}-${index}`}>{item}</span>)}
+                    </div>
                 </div>
 
-                <div className="Location__host">
-                    {Location.host.name}
-                    <img src={Location.host.picture} alt={Location.host.name} />
+                <div className="location__host">
+                    <p>{data.host.name}</p>
+                    <img src={data.host.picture} alt={data.host.name} />
+                    <div className="location__ratings">
+                        { data.rating}
+                    </div>  
                 </div>
+                
             </div>
 
-            <div className="Location__filters">
-                <div className="Location__tags">
-                    {Location.tags.toString()}  
-                </div>
-                <div className="Location__ratings">
-                    { Location.rating}
-                </div>                
+            <div className="location__description">
+                <Accordion title="description">
+                    {data.description}
+                </Accordion>
+                <Accordion title="equipements">
+                    <ul>
+                        {data.equipments.map( (item, index) => <li key={`${item}-${index}`}>{item}</li>)}
+                    </ul>
+                </Accordion>
             </div>
-
-            <div className="Location__description">
-                <Accordion title="description" text={Location.description} />
-                <Accordion title="equipements" text={Location.equipments.toString()} />
-            </div>
-
-            { Location ? null : <div>ERREUR D'ID</div> }
+            </>
+            )}           
         </article>
     )
 }
