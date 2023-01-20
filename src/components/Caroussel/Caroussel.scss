@@ -1,0 +1,12 @@
+.caroussel{
+    height:415px;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.caroussel img {
+    object-fit: cover;
+    display: block;
+    height: 100%;
+    border-radius: 25px;
+}

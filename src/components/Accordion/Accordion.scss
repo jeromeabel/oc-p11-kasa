@@ -1,0 +1,64 @@
+// @use '../../styles/shared' as shared;
+
+@import '../../styles/shared';
+
+.accordion {
+    background-color: #F6F6F6;
+    border-radius: 10px;
+
+    &__header {
+        background-color: $color-red;
+        color:white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__body {
+        padding:20px;
+    
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight:500;
+        display: inline;
+        padding: 20px;
+    }
+
+    &__btn {
+        color:white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 20px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+
+.rotate0 {
+    transform: rotate(0);
+    transition: transform 400ms;
+}
+.rotate180 {
+    transform: rotate(180deg);
+    transition: transform 400ms;
+}
+
+.hideY {
+    transform: translateY(-100px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+}
+
+.showY {
+    transform: translateY(0px);
+    opacity: 1;
+    visibility:visible;
+    transition: all 400ms;
+}

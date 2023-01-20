@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 
-import Banner from '../components/Banner'
-import AccomodationsGrid from '../components/AccomodationsGrid';
-import imgBanner from '../assets/banner-home.jpg'
+import Banner from '../../components/Banner/Banner'
+import LocationsList from '../../components/LocationsList/LocationsList';
+
+import imgBanner from '../../assets/banner-home.jpg'
 
 export default function Home() {
 
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <section className="home">
       <Banner image={imgBanner} text="Chez vous, partout et ailleurs" />
-      <AccomodationsGrid />
+      <LocationsList />
     </section>
   )
 }

@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import '../styles/Accordion.css'
 
-export default function Accordion( {title, text }) {
+import './Accordion.scss'
+
+export default function Accordion( {title, text, list }) {
     const [ isVisible, setIsVisible ] = useState(false)
     
     return (
@@ -20,9 +21,18 @@ export default function Accordion( {title, text }) {
                         } */}
                 </button>
             </div>
-            { isVisible && 
+            {/* <div  className={`accordion__body ${isVisible ? "hideY" : "showY"}`}>
+                    <p>{text}</p>
+            </div> */}
+
+            { isVisible && text &&
                 <div className='accordion__body'>
                     <p>{text}</p>
+                </div>
+            }
+             { isVisible && list &&
+                <div className='accordion__body'>
+                    <ul>{list.map( (item, index) => <li key={`${item}`}>{item}</li>)}</ul>
                 </div>
             }   
         </div>

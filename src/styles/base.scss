@@ -1,4 +1,4 @@
-@import-normalize;
+// @import-normalize;
 
 @import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap';
 
@@ -16,8 +16,8 @@ html {
 
 body {
     font-family: 'Montserrat', Helvetica, sans-serif, monospace;
-    color:#FF6060;
-    font-size: 18px;
+    color: $color-red;
+    font-size: $font-m;
     font-weight: 500;
 }
 

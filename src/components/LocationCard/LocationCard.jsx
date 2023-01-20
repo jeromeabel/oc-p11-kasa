@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 
-import '../styles/AccomodationCard.css'
+import './LocationCard.scss'
 
-export default function AccomodationCard( { data }) {
+export default function LocationCard( { data }) {
 
     return (
-        <Link to={`/accomodation/${data.id}`}>
+        <Link to={`/location/${data.id}`}>
             <div className="card">
                 <img className="card__img" src={data.cover} alt={data.title} />
                 <h2 className="card__title">{data.title}</h2>
@@ -13,5 +13,3 @@ export default function AccomodationCard( { data }) {
         </Link>
     )
 }
-
-// <Link to={`/accomodation/${accomodation.id}`} state={{ accomodation: accomodation }}>{accomodation.title}</Link>
