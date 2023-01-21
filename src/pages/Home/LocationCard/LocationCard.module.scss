@@ -1,50 +1,44 @@
 .card {
-    /* height:200px;
-    width:200px; */
-    height: 340px;
-    background-color: #FF6060;
-    background: linear-gradient(#FF6060 0%, rgba(0,0,0,0.8) 200%);
-/* 
-    background: rgb(2,0,36);
-    background: linear-gradient(rgba(255,96,96,1)0%, rgba(2,0,36,0.7343312324929971) 80% ); */
+  height: 340px;
+  position: relative;
+  border-radius: 10px;
 
-    position: relative;
-    border-radius: 10px;
-    /* background-color: #FF6060; */
-    /* position: relative; */
-}
-.card:hover::before {
-    opacity: 0.1;
-    transition: opacity 300ms;
-}
-
-.card::before {
-    border-radius: 10px;
-    opacity: 0.5;
-    content:"";
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    /*background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);*/
-
-   background: linear-gradient(rgba(255,96,96,1)0%, rgba(2,0,36,0.7343312324929971) 80% );
-} 
-
-.card__img {
-    height:100%;
+  &__img {
+    height: 100%;
     border-radius: 10px;
     object-fit: cover;
-}
+  }
 
-.card__title {
-    font-size: 18px;
-    font-weight: 500;
-    color:white;
+  &__title {
     position: absolute;
-    left:0;
-    top:250px;
-    z-index:1;
-    padding:20px;
+    left: 0;
+    top: 250px;
+    z-index: 1;
+    padding: 20px;
+    font-size: var(--font-m);
+    font-weight: 500;
+    color: var(--color-white);
+  }
+
+  &:hover::before {
+    opacity: 0.1;
+    transition: opacity 300ms;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    opacity: 0.5;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    //(255, 96, 96, 1)
+  }
 }

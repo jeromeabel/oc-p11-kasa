@@ -13,8 +13,12 @@ const App = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
-      // { path: "location/:locationId", element: <Location />, errorElement: <Error404 />, }, //
-      // { path: "*", element: <Error404 />, }
+      {
+        path: 'location/:locationId',
+        element: <Location />,
+        errorElement: <Error404 />,
+      },
+      { path: '*', element: <Error404 /> },
     ],
   },
 ]);

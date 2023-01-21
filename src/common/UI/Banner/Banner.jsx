@@ -1,12 +1,15 @@
-import './Banner.scss'
+import styles from './Banner.module.scss';
 
-export default function Banner( { image, text, children }) {
-
-    return (
-        <div className="container banner">
-            <img className="banner__img" src={image} alt="Paysages" aria-hidden="true" />
-            {/* { text && <h1>{text}</h1> } */}
-            { children && <h1>{children}</h1> }
-        </div>
-    )
+export default function Banner({ image, children }) {
+  return (
+    <div className={styles.banner}>
+      <img
+        className={styles.banner__img}
+        src={image}
+        alt="Paysages"
+        aria-hidden="true"
+      />
+      {children && <h1 className={styles.banner__h1}>{children}</h1>}
+    </div>
+  );
 }

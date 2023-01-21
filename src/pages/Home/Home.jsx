@@ -17,7 +17,7 @@ export default function Home() {
     <section className={styles.home}>
       <Banner image={imgBanner}>Chez vous, partout et ailleurs</Banner>
 
-      <section className={`container ${styles.home__container}`}>
+      <section className={styles.home__container}>
         {loading && <div>LOADING ... </div>}
         {error && <div>ERROR : {error} </div>}
         {locations && (

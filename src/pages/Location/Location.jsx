@@ -1,57 +1,60 @@
 import { useParams } from 'react-router-dom';
 import { useFetchLocationById } from 'common/hooks/fetchData';
 import { useSetTitle } from 'common/hooks/setTitle';
-import Caroussel from './Caroussel/Caroussel';
+
 import Dropdown from 'common/UI/Dropdown/Dropdown';
 
-import './Location.scss';
+import Caroussel from './Caroussel/Caroussel';
+import Tags from './Tags/Tags';
+import Host from './Host/Host';
+import Rating from './Rating/Rating';
+
+import styles from './Location.module.scss';
 
 export default function Location() {
   // Get Data
   const { locationId } = useParams();
-  const { location, loading, error } = useFetchLocationById(
+  const { locationData, loading, error } = useFetchLocationById(
     '/logements.json',
     locationId
   );
 
   // Set Title
   let title = 'Logement';
-  if (!loading && !error) title += ` - ${location.title}`;
+  if (!loading && !error) title += ` - ${locationData.title}`;
   useSetTitle(title);
 
   return (
-    <article className="location">
+    <article className={styles.container}>
       {loading && <div>LOADING ... </div>}
       {error && <div>ERROR : {error} </div>}
-      {location && (
+      {locationData && (
         <>
-          <Caroussel title={location.title} pictures={location.pictures} />
+          <Caroussel
+            title={locationData.title}
+            pictures={locationData.pictures}
+          />
 
-          <div className="location__header">
-            <div className="location__heading">
-              <h1 className="location__title">{location.title}</h1>
-              <p>{location.location}</p>
-              <div className="location__tags">
-                {location.tags.map((item, index) => (
-                  <span className="location__tag" key={`${item}-${index}`}>
-                    {item}
-                  </span>
-                ))}
-              </div>
+          <div className={styles.header}>
+            <div className={styles.header__side}>
+              <h1>{locationData.title}</h1>
+              <p>{locationData.location}</p>
+              <Tags tags={locationData.tags} />
             </div>
-
-            <div className="location__host">
-              <p>{location.host.name}</p>
-              <img src={location.host.picture} alt={location.host.name} />
-              <div className="location__ratings">{location.rating}</div>
+            <div className={styles.header__side}>
+              <Host
+                name={locationData.host.name}
+                picture={locationData.host.picture}
+              />
+              <Rating nb={locationData.rating} />
             </div>
           </div>
 
-          <div className="location__description">
-            <Dropdown title="description">{location.description}</Dropdown>
+          <div className={styles.description}>
+            <Dropdown title="description">{locationData.description}</Dropdown>
             <Dropdown title="equipements">
               <ul>
-                {location.equipments.map((item, index) => (
+                {locationData.equipments.map((item, index) => (
                   <li key={`${item}-${index}`}>{item}</li>
                 ))}
               </ul>
