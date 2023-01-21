@@ -16,8 +16,8 @@ html {
 
 body {
     font-family: 'Montserrat', Helvetica, sans-serif, monospace;
-    color: $color-primary;
-    font-size: $font-m;
+    color: var(--color-primary);
+    font-size: var(--font-m);
     font-weight: 500;
 }
 

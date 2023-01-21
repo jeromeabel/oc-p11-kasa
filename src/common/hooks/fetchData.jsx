@@ -23,8 +23,8 @@ export const useFetchData = ( url ) => {
   return { data, loading, error }
 }
 
-export const useFetchDataById = (url, id) => {
+export const useFetchLocationById = (url, id) => {
   const { data, loading, error } = useFetchData(url);
-  const dataById = data.find( (item) => item.id === id )
-  return { dataById, loading, error }
+  const location = data.find( (item) => item.id === id )
+  return { location, loading, error }
 }

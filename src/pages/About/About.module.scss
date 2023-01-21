@@ -1,0 +1,13 @@
+.about {
+  &__container {
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  &__list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 50px;
+  }
+}

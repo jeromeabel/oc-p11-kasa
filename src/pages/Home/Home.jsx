@@ -1,35 +1,38 @@
-import { useFetchData } from '../../hook/fetchData';
-import { useSetTitle } from '../../hook/setTitle';
+import { useFetchData } from 'common/hooks/fetchData';
+import { useSetTitle } from 'common/hooks/setTitle';
 
-import Banner from '../../components/Banner/Banner';
+import Banner from 'common/UI/Banner/Banner';
 import LocationCard from './LocationCard/LocationCard';
 
-import imgBanner from '../../assets/banner-home.jpg';
-import './Home.scss'
+import imgBanner from 'assets/banner-home.jpg';
+
+import styles from './Home.module.scss';
 
 export default function Home() {
+  useSetTitle('Accueil');
 
-  useSetTitle("Accueil");
-  
-  const { data, loading, error } = useFetchData('/logements.json');
+  const { data: locations, loading, error } = useFetchData('/logements.json');
 
   return (
-    <section className="home">
+    <section className={styles.home}>
       <Banner image={imgBanner}>Chez vous, partout et ailleurs</Banner>
 
-      <section className="container home__grid">
-
-        { loading && <div>LOADING ... </div> }
-        { error && <div>ERROR : {error} </div> }
-        { data && 
-          <div className="grid">
-          { data.map((location) => ( 
-            <LocationCard key={location.id} data={location} /> 
-          ) )}
-         </div>
-        }
-
+      <section className={`container ${styles.home__container}`}>
+        {loading && <div>LOADING ... </div>}
+        {error && <div>ERROR : {error} </div>}
+        {locations && (
+          <div className={styles.home__grid}>
+            {locations.map((location) => (
+              <LocationCard
+                key={location.id}
+                id={location.id}
+                title={location.title}
+                cover={location.cover}
+              />
+            ))}
+          </div>
+        )}
       </section>
     </section>
-  )
+  );
 }

@@ -1,0 +1,26 @@
+.header {
+    padding: 40px 0 40px 0;
+    margin-inline: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        height:68px;
+    }
+}
+
+.nav  { 
+    ul {
+        display: flex;
+    }
+
+    &__link {
+        margin-left:40px;
+        font-size: var(--font-l);
+    }
+
+    &__link a.active {
+        text-decoration: underline;
+    }
+}

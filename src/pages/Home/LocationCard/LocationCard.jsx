@@ -1,15 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import './LocationCard.scss'
+import styles from './LocationCard.module.scss';
 
-export default function LocationCard( { data }) {
-
-    return (
-        <Link to={`/location/${data.id}`}>
-            <div className="card">
-                <img className="card__img" src={data.cover} alt={data.title} />
-                <h2 className="card__title">{data.title}</h2>
-            </div>
-        </Link>
-    )
+export default function LocationCard({ id, title, cover }) {
+  return (
+    <Link to={`/location/${id}`}>
+      <div className={styles.card}>
+        <img className={styles.card__img} src={cover} alt={title} />
+        <h2 className={styles.card__title}>{title}</h2>
+      </div>
+    </Link>
+  );
 }
