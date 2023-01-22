@@ -7,7 +7,7 @@ export default function Dropdown({ title, children, list }) {
 
   return (
     <div className={styles.dropdown}>
-      <div className={styles.dropdown__header}>
+      <div className={styles.header}>
         <h2>{title}</h2>
         <button
           type="button"
@@ -18,8 +18,8 @@ export default function Dropdown({ title, children, list }) {
           <i className="fa-sharp fa-solid fa-chevron-down"></i>
         </button>
       </div>
-      <div className={styles.dropdown__body} aria-expanded={!isOpen}>
-        <p aria-expanded={isOpen}>{children}</p>
+      <div className={` ${styles.body} ${!isOpen ? styles['body--open'] : ''}`}>
+        <p>{children}</p>
       </div>
     </div>
   );
