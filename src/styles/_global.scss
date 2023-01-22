@@ -19,6 +19,10 @@ body {
   color: var(--color-primary);
   font-size: var(--font-m);
   font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* body takes whole viewport's height */
 }
 
 picture,
@@ -33,6 +37,7 @@ main,
 footer {
   width: 100%;
   min-width: 350px;
+  flex: 1; /* free space */
 }
 
 .container {
