@@ -1,36 +1,26 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-import './Dropdown.scss'
+import styles from './Dropdown.module.scss';
 
-export default function Dropdown( {title, children, list }) {
-    const [ isVisible, setIsVisible ] = useState(false)
-    
-    return (
-        <div className='Dropdown'>
-            <div className='Dropdown__header'>
-                <h2 className='Dropdown__title'>{title}</h2>
-                <button
-                    type="button"
-                    className={`Dropdown__btn ${isVisible ? "rotate0" : "rotate180"}`}
-                    aria-expanded="false"
-                    onClick={() => setIsVisible(!isVisible)}>
-                    <i className="fa-sharp fa-solid fa-chevron-down"></i>
-                </button>
-            </div>
-            <div className={`Dropdown__body ${isVisible ? "showY" : "hideY"}`}>
-                {children}
-            </div>
+export default function Dropdown({ title, children, list }) {
+  const [isOpen, setIsOpen] = useState(false);
 
-            {/* { isVisible && text &&
-                <div className='Dropdown__body'>
-                    <p>{text}</p>
-                </div>
-            }
-             { isVisible && list &&
-                <div className='Dropdown__body'>
-                    <ul>{list.map( (item, index) => <li key={`${item}`}>{item}</li>)}</ul>
-                </div>
-            }    */}
-        </div>
-    )
+  return (
+    <div className={styles.dropdown}>
+      <div className={styles.dropdown__header}>
+        <h2>{title}</h2>
+        <button
+          type="button"
+          aria-expanded={isOpen}
+          aria-label="Toggle dropdown"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <i className="fa-sharp fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+      <div className={styles.dropdown__body} aria-expanded={!isOpen}>
+        <p aria-expanded={isOpen}>{children}</p>
+      </div>
+    </div>
+  );
 }
