@@ -9,9 +9,9 @@ export default function Rating({ nb }) {
     <div className={styles.rating}>
       {stars.map((_, index) =>
         nb > index ? (
-          <Star className={styles.fill} />
+          <Star className={styles['rating--fill']} />
         ) : (
-          <Star className={styles.empty} />
+          <Star className={styles['rating--empty']} />
         )
       )}
     </div>
