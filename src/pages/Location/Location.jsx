@@ -1,4 +1,6 @@
 import { useParams } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+
 import { useFetchLocationById } from 'common/hooks/fetchData';
 import { useSetTitle } from 'common/hooks/setTitle';
 
@@ -22,13 +24,15 @@ export default function Location() {
 
   // Set Title
   let title = 'Logement';
-  if (!loading && !error) title += ` - ${locationData.title}`;
+  if (!loading && !error && locationData) title += ` - ${locationData.title}`;
   useSetTitle(title);
 
   return (
     <article className={styles.container}>
       {loading && <Loader />}
-      {error && <div>ERROR : {error} </div>}
+      {!locationData && <div>ERROR : {error} </div>}
+      {!loading && !locationData && <Navigate to="/error404" replace={true} />}
+
       {locationData && (
         <>
           <Caroussel
