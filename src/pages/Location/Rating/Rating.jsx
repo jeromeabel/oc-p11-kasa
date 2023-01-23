@@ -1,6 +1,8 @@
 import styles from './Rating.module.scss';
 
-import Star from './Star/Star';
+// import Star from './Star/Star';
+
+import { ReactComponent as Star } from 'assets/star.svg';
 
 export default function Rating({ nb }) {
   const stars = Array(5).fill(0);
@@ -9,9 +11,9 @@ export default function Rating({ nb }) {
     <div className={styles.rating}>
       {stars.map((_, index) =>
         nb > index ? (
-          <Star className={styles['rating--fill']} />
+          <Star key={`star-${index}`} className={styles['rating--fill']} />
         ) : (
-          <Star className={styles['rating--empty']} />
+          <Star key={`star-${index}`} className={styles['rating--empty']} />
         )
       )}
     </div>
