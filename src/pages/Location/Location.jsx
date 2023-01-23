@@ -52,8 +52,8 @@ export default function Location() {
           </div>
 
           <div className={styles.description}>
-            <Dropdown title="description">{locationData.description}</Dropdown>
-            <Dropdown title="equipements">
+            <Dropdown title="Description">{locationData.description}</Dropdown>
+            <Dropdown title="Équipements">
               <ul>
                 {locationData.equipments.map((item, index) => (
                   <li key={`${item}-${index}`}>{item}</li>

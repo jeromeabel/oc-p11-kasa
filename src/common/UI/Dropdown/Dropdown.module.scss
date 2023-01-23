@@ -9,42 +9,46 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
+    padding-inline: 20px;
   }
 
   .body {
     overflow: hidden;
     max-height: 500px;
-    padding: 1em;
-    transition: all 0.35s ease-in-out;
+    padding: 20px;
+    transition: all 0.4s ease-in-out;
     line-height: 1.7em;
 
     &--open {
       max-height: 0;
-      padding: 0 1em;
+      line-height: 1.5em;
+      padding: 0 20px;
     }
   }
 
   h2 {
     font-size: var(--font-l);
     font-weight: 500;
-    display: inline;
-    padding: 20px;
   }
 
   button {
-    color: var(--color-white);
-    font-size: var(--font-l);
     cursor: pointer;
-    padding: 20px;
-    transition: transform 0.35s, color 0.2s;
-    transform: rotateZ(180deg);
+    fill: var(--color-white);
+    transform: rotateZ(-90deg);
+    transition: transform 0.35s, fill 0.2s;
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
 
     &:hover {
-      color: var(--color-black);
+      fill: var(--color-black);
     }
 
     &[aria-expanded='true'] {
-      transform: rotateZ(360deg);
+      transform: rotateZ(90deg);
     }
   }
 }

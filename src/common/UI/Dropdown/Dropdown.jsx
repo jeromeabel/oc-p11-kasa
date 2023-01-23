@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { ReactComponent as Arrow } from 'assets/arrow.svg';
+
 import styles from './Dropdown.module.scss';
 
 export default function Dropdown({ title, children, list }) {
@@ -15,7 +17,7 @@ export default function Dropdown({ title, children, list }) {
           aria-label="Toggle dropdown"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <i className="fa-sharp fa-solid fa-chevron-down"></i>
+          <Arrow />
         </button>
       </div>
       <div className={` ${styles.body} ${!isOpen ? styles['body--open'] : ''}`}>
