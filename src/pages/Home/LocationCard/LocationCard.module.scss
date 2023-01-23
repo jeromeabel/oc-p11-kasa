@@ -34,7 +34,7 @@
 
   &:hover::before {
     opacity: 0.1;
-    transition: opacity 300ms;
+    transition: opacity 0.35s ease-in-out;
   }
 
   &::before {
@@ -48,10 +48,8 @@
     opacity: 0.5;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.2) 0%,
+      rgba(255, 96, 96, 0.6) 0%,
       rgba(0, 0, 0, 1) 100%
     );
-
-    //(255, 96, 96, 1)
   }
 }
