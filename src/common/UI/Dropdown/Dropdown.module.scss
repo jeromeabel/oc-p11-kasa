@@ -16,14 +16,11 @@
     max-height: 500px;
     padding: 1em;
     transition: all 0.35s ease-in-out;
+    line-height: 1.7em;
 
     &--open {
       max-height: 0;
       padding: 0 1em;
-    }
-
-    p {
-      line-height: 1.7em;
     }
   }
 

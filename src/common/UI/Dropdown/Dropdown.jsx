@@ -19,7 +19,7 @@ export default function Dropdown({ title, children, list }) {
         </button>
       </div>
       <div className={` ${styles.body} ${!isOpen ? styles['body--open'] : ''}`}>
-        <p>{children}</p>
+        {children}
       </div>
     </div>
   );
