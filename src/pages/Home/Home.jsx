@@ -22,7 +22,7 @@ export default function Home() {
       <section className={styles.home__container}>
         {loading && <Loader />}
         {error && <div>ERROR : {error} </div>}
-        {locations && (
+        {!loading && locations && (
           <div className={styles.home__grid}>
             {locations.map((location) => (
               <LocationCard
