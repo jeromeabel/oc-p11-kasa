@@ -17,8 +17,9 @@ import styles from './Location.module.scss';
 export default function Location() {
   // Get Data
   const { locationId } = useParams();
+  const dataURL = '/oc-p11-kasa/logements.json';
   const { locationData, loading, error } = useFetchLocationById(
-    '/logements.json',
+    dataURL,
     locationId
   );
 

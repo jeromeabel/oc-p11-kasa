@@ -12,7 +12,8 @@ import styles from './Home.module.scss';
 export default function Home() {
   useSetTitle('Accueil');
 
-  const { data: locations, loading, error } = useFetchData('/logements.json');
+  const dataURL = '/oc-p11-kasa/logements.json';
+  const { data: locations, loading, error } = useFetchData(dataURL);
 
   return (
     <section className={styles.home}>

@@ -6,7 +6,7 @@ import About from './pages/About/About';
 import Location from './pages/Location/Location';
 import Error404 from './pages/Error404/Error404';
 
-const App = createBrowserRouter(
+const AppRouter = createBrowserRouter(
   [
     {
       path: '/',
@@ -24,7 +24,7 @@ const App = createBrowserRouter(
       ],
     },
   ],
-  { basename: '/oc-p11-kasa' }
+  { basename: '/oc-p11-kasa' } // Deploy to this folder
 );
 
-export default App;
+export default AppRouter;
