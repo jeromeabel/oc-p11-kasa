@@ -1,0 +1,86 @@
+@import 'styles/mixins.scss';
+
+.dropdown {
+  background-color: var(--color-light-grey);
+  border-radius: 10px;
+  @include mobile {
+    border-radius: 5px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding-inline: 20px;
+    border-radius: 10px;
+
+    background-color: var(--color-primary);
+    color: var(--color-white);
+
+    @include mobile {
+      height: 30px;
+      padding-inline: 12px;
+      border-radius: 5px;
+    }
+  }
+
+  .body {
+    overflow: hidden;
+    max-height: 500px;
+    padding: 20px;
+    transition: all 0.4s ease-in-out;
+    line-height: 1.7em;
+    font-weight: 400;
+
+    @include mobile {
+      font-size: var(--font-xs);
+      line-height: 1.5em;
+      padding: 15px;
+    }
+
+    &--open {
+      max-height: 0;
+      line-height: 1.5em;
+      padding: 0 20px;
+
+      @include mobile {
+        padding: 0 15px;
+      }
+    }
+  }
+
+  h2 {
+    font-size: var(--font-l);
+    font-weight: 500;
+
+    @include mobile {
+      font-size: var(--font-s);
+    }
+  }
+
+  button {
+    cursor: pointer;
+    fill: var(--color-white);
+    transform: rotateZ(90deg);
+    transition: transform 0.35s, fill 0.2s;
+
+    svg {
+      height: 24px;
+      width: 24px;
+
+      @include mobile {
+        height: 16px;
+        width: 16px;
+      }
+    }
+
+    &:hover {
+      fill: var(--color-black);
+    }
+
+    &[aria-expanded='true'] {
+      transform: rotateZ(-90deg);
+    }
+  }
+}

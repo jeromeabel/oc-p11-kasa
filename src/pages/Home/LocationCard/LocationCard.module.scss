@@ -1,0 +1,57 @@
+@import 'styles/mixins.scss';
+
+.card {
+  height: 340px;
+  position: relative;
+  border-radius: 10px;
+
+  @include mobile {
+    height: 255px;
+  }
+
+  &__img {
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  &__title {
+    position: absolute;
+    left: 0;
+    top: 250px;
+    z-index: 1;
+    padding: 20px;
+    font-size: var(--font-m);
+    font-weight: 500;
+    color: var(--color-white);
+
+    @include mobile {
+      top: auto;
+      bottom: 15px;
+      padding: 0 20px;
+    }
+  }
+
+  &:hover::before {
+    opacity: 0.1;
+    transition: opacity 300ms;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    opacity: 0.5;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+
+    //(255, 96, 96, 1)
+  }
+}

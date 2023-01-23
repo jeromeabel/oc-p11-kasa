@@ -1,0 +1,73 @@
+@import 'styles/mixins.scss';
+
+.caroussel {
+  position: relative;
+  height: 415px;
+
+  @include mobile {
+    height: 255px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0.3;
+    transition: opacity 0.5s ease-in-out;
+
+    &--active {
+      opacity: 1;
+    }
+
+    img {
+      border-radius: 25px;
+      object-fit: cover;
+      display: block;
+      height: 100%;
+
+      @include mobile {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+
+    button {
+      cursor: pointer;
+      padding: 20px;
+      height: 100%;
+      @include mobile {
+        padding: 0px;
+      }
+
+      &:hover svg {
+        fill: var(--color-black);
+      }
+
+      &:first-child {
+        transform: rotate(180deg);
+      }
+
+      svg {
+        fill: var(--color-white);
+        height: 80px;
+        @include mobile {
+          height: 20px;
+        }
+      }
+    }
+  }
+}
