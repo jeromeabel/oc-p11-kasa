@@ -1,6 +1,12 @@
+@import 'styles/mixins.scss';
+
 .caroussel {
   position: relative;
   height: 415px;
+
+  @include mobile {
+    height: 255px;
+  }
 
   &__image {
     position: absolute;
@@ -21,6 +27,10 @@
       object-fit: cover;
       display: block;
       height: 100%;
+
+      @include mobile {
+        border-radius: 10px;
+      }
     }
   }
 
@@ -36,10 +46,12 @@
     z-index: 5;
 
     button {
-      font-size: var(--font-xl);
       cursor: pointer;
       padding: 20px;
       height: 100%;
+      @include mobile {
+        padding: 0px;
+      }
 
       &:hover svg {
         fill: var(--color-black);
@@ -52,6 +64,9 @@
       svg {
         fill: var(--color-white);
         height: 80px;
+        @include mobile {
+          height: 20px;
+        }
       }
     }
   }

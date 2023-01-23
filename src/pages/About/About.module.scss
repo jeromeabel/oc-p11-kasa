@@ -1,13 +1,31 @@
+@import 'styles/mixins.scss';
+
 .about {
   &__container {
     width: 80%;
     margin-inline: auto;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__list {
-    padding: 50px;
     display: flex;
     flex-direction: column;
-    grid-gap: 50px;
+    gap: 50px;
+    padding: 50px;
+
+    @include mobile {
+      padding: 20px 0;
+      gap: 20px;
+    }
+  }
+
+  &__banner {
+    height: 223px;
+    @include mobile {
+      height: 223px;
+    }
   }
 }

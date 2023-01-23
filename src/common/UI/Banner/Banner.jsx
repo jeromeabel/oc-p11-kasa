@@ -1,8 +1,8 @@
 import styles from './Banner.module.scss';
 
-export default function Banner({ image, children }) {
+export default function Banner({ image, className = '', children = '' }) {
   return (
-    <div className={styles.banner}>
+    <div className={` ${styles.banner}  ${className}`}>
       <img
         className={styles.banner__img}
         src={image}

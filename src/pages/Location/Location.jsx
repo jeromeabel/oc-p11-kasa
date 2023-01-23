@@ -42,7 +42,9 @@ export default function Location() {
               <p>{locationData.location}</p>
               <Tags tags={locationData.tags} />
             </div>
-            <div className={styles.header__side}>
+            <div
+              className={`${styles['header__side']} ${styles['header__side-host']} `}
+            >
               <Host
                 name={locationData.host.name}
                 picture={locationData.host.picture}

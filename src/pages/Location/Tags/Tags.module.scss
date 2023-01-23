@@ -1,13 +1,25 @@
+@import 'styles/mixins.scss';
+
 .tags {
   display: flex;
   gap: 15px;
   margin-top: 20px;
+  @include mobile {
+    margin-top: 0px;
+    gap: 10px;
+  }
 }
 
 .tag {
   color: var(--color-white);
   background-color: var(--color-primary);
   font-size: var(--font-s);
-  padding: 5px 22px 5px 22px;
+  padding: 5px 22px;
   border-radius: 10px;
+
+  @include mobile {
+    font-size: var(--font-xxs);
+    padding: 2px 20px;
+    border-radius: 5px;
+  }
 }
