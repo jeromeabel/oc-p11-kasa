@@ -3,26 +3,24 @@ import styles from './Caroussel.module.scss';
 import { ReactComponent as Arrow } from 'assets/arrow.svg';
 
 export default function Caroussel({ title, pictures }) {
-  // transition ? slide ?
-  const [index, setIndex] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const length = pictures.length;
 
-  function nextImage() {
-    if (index === pictures.length - 1) setIndex(0);
-    else setIndex(index + 1);
-  }
+  const nextImage = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
 
-  function prevImage() {
-    if (index === 0) setIndex(pictures.length - 1);
-    else setIndex(index - 1);
+  const prevImage = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  if (!Array.isArray(pictures) || pictures.length <= 0) {
+    return null;
   }
 
   return (
     <section className={styles.caroussel}>
-      <div className={styles.caroussel__img}>
-        <img src={pictures[index]} alt={title} />
-      </div>
-
-      {pictures.length > 1 && (
+      {length > 1 && (
         <div className={styles.caroussel__controls}>
           <button onClick={prevImage}>
             <Arrow />
@@ -32,6 +30,21 @@ export default function Caroussel({ title, pictures }) {
           </button>
         </div>
       )}
+
+      {pictures.map((picture, index) => {
+        return (
+          <div
+            className={`${styles['caroussel__image']}  ${
+              index === current ? styles['caroussel__image--active'] : ''
+            } `}
+            key={index}
+          >
+            {index === current && (
+              <img src={picture} alt={`${title} : ${index}`} />
+            )}
+          </div>
+        );
+      })}
     </section>
   );
 }

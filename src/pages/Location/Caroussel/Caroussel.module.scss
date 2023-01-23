@@ -1,17 +1,26 @@
 .caroussel {
   position: relative;
+  height: 415px;
 
-  &__img {
-    height: 415px;
-    width: 100%;
-    border-radius: 25px;
+  &__image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0.3;
+    transition: opacity 0.5s ease-in-out;
+
+    &--active {
+      opacity: 1;
+    }
 
     img {
       border-radius: 25px;
       object-fit: cover;
       display: block;
       height: 100%;
-      animation: fade 1s;
     }
   }
 
@@ -21,10 +30,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 5;
 
     button {
       font-size: var(--font-xl);
@@ -45,14 +54,5 @@
         height: 80px;
       }
     }
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
