@@ -2,6 +2,7 @@ import { useFetchData } from 'common/hooks/fetchData';
 import { useSetTitle } from 'common/hooks/setTitle';
 
 import Banner from 'common/UI/Banner/Banner';
+import Loader from 'common/UI/Loader/Loader';
 import LocationCard from './LocationCard/LocationCard';
 
 import imgBanner from 'assets/banner-home.jpg';
@@ -18,7 +19,7 @@ export default function Home() {
       <Banner image={imgBanner}>Chez vous, partout et ailleurs</Banner>
 
       <section className={styles.home__container}>
-        {loading && <div>LOADING ... </div>}
+        {loading && <Loader />}
         {error && <div>ERROR : {error} </div>}
         {locations && (
           <div className={styles.home__grid}>

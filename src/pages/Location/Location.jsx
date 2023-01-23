@@ -3,6 +3,7 @@ import { useFetchLocationById } from 'common/hooks/fetchData';
 import { useSetTitle } from 'common/hooks/setTitle';
 
 import Dropdown from 'common/UI/Dropdown/Dropdown';
+import Loader from 'common/UI/Loader/Loader';
 
 import Caroussel from './Caroussel/Caroussel';
 import Tags from './Tags/Tags';
@@ -26,7 +27,7 @@ export default function Location() {
 
   return (
     <article className={styles.container}>
-      {loading && <div>LOADING ... </div>}
+      {loading && <Loader />}
       {error && <div>ERROR : {error} </div>}
       {locationData && (
         <>
