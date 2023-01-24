@@ -2,6 +2,7 @@
 
 .tags {
   display: flex;
+  align-items: flex-start;
   gap: 15px;
   margin-top: 20px;
   @include mobile {

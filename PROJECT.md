@@ -1,5 +1,17 @@
 # PROJECT
 
+## Deployment steps for github pages
+
+- Install gh-pages
+- Add scripts : "predeploy": "npm run build", "deploy": "gh-pages -d build"
+- On github project, select "gh-pages" branch and "/" root.
+- Handle routing
+  - package.json : "homepage": "https://<username>.github.io/<project-repo>",
+  - AppRouter.jsx (or App): add basename to the second argument of createBrowserRouuter : createBrowserRouter( [<routes>], { basename: '/<project-repo>' })
+  - When Fetching Data, add <project-repo> to the URL : fetch('/<project-repo>/data.json' )
+  - Error 404 issue : modify build script to copy a 404.html file : "build": "react-scripts build && cp build/index.html build/404.html"
+- npm run deploy and pray
+
 ## Resources
 
 - [Creat React App + Github branch](https://dev.to/kristenkinnearohlmann/basic-setup-for-create-react-app-1e3m)
