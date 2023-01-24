@@ -25,6 +25,9 @@ export default function Caroussel({ title, pictures }) {
           <button onClick={prevImage}>
             <Arrow />
           </button>
+          <div className={styles.caroussel__counter}>
+            {current + 1} / {length}
+          </div>
           <button onClick={nextImage}>
             <Arrow />
           </button>

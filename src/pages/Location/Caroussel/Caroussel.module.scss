@@ -34,6 +34,21 @@
     }
   }
 
+  &__counter {
+    align-self: flex-end;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    color: var(--color-white);
+    background-color: rgba(0, 0, 0, 0.1);
+
+    @include mobile {
+      font-size: var(--font-s);
+      padding: 2px 5px;
+      margin-bottom: 10px;
+    }
+  }
   &__controls {
     position: absolute;
     top: 0;
