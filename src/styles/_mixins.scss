@@ -11,3 +11,9 @@ $screen-full: 1400px;
     @content;
   }
 }
+
+@mixin tablet {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
