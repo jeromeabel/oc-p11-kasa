@@ -6,6 +6,16 @@ Développez une application Web avec React et React Router
 
 - https://jeromeabel.github.io/oc-p11-kasa/
 
+## Installation
+
+Le projet a été créé avec create-react-app
+
+- npm install
+
+## Utilisation
+
+- npm run start
+
 ## Contexte
 
 - Je suis développeur freelance
