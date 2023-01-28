@@ -17,7 +17,9 @@ export default function Home() {
 
   return (
     <section className={styles.home}>
-      <Banner image={imgBanner}>Chez vous, partout et ailleurs</Banner>
+      <Banner image={imgBanner} className={styles.home__banner}>
+        Chez vous, partout et ailleurs
+      </Banner>
 
       <section className={styles.home__container}>
         {loading && <Loader />}

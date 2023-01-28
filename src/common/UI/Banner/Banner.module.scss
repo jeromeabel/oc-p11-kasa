@@ -4,10 +4,6 @@
   position: relative;
   height: 223px;
 
-  @include mobile {
-    height: 111px;
-  }
-
   &__img {
     border-radius: 25px;
     object-fit: cover;

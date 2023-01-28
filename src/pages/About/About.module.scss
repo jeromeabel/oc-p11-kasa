@@ -21,11 +21,4 @@
       gap: 20px;
     }
   }
-
-  &__banner {
-    height: 223px;
-    @include mobile {
-      height: 223px;
-    }
-  }
 }

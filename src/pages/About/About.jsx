@@ -12,7 +12,7 @@ export default function About() {
 
   return (
     <section className={styles.about}>
-      <Banner image={imgBanner} className={styles.about__banner} />
+      <Banner image={imgBanner} />
 
       <div className={styles.about__container}>
         <div className={styles.about__list}>
