@@ -1,5 +1,19 @@
 # PROJECT
 
+## Axes d'améliorations
+
+- Anim slideshow
+- Error404 layout flex grow
+- Condition rating-stars
+
+## Difficultés
+
+- React-router v6 & Error Element
+- Structure
+- CSS avec React
+- SVG
+- Déploiement : basename, homepage
+
 ## Deployment steps for github pages
 
 - Install gh-pages
