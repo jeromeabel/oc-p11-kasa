@@ -31,7 +31,7 @@ export default function Location() {
   return (
     <article className={styles.container}>
       {loading && <Loader />}
-      {!locationData && <div>ERROR : {error} </div>}
+      {error && <div>ERROR : {error} </div>}
       {!loading && !locationData && <Navigate to="/error404" replace={true} />}
 
       {locationData && (
