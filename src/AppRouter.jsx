@@ -17,7 +17,7 @@ const AppRouter = createBrowserRouter(
         {
           path: 'location/:locationId',
           element: <Location />,
-          errorElement: <Error404 />,
+          // errorElement: <Error404 />,
         },
         { path: 'error404', element: <Error404 /> },
         { path: '*', element: <Error404 /> },
