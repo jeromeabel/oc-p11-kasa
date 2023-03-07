@@ -1,5 +1,16 @@
 # PROJECT
 
+## Contexte
+
+- Je suis développeur freelance
+- Client : Kasa, leader de locations d'appartements entre particuliers en France
+- Refonte du site web : Stack Node & React
+
+## Mission
+
+- Développer le projet en React (composants, React Router, données en JSON)
+- Intégrer en CSS les maquettes Desktop et Mobile
+
 ## Axes d'améliorations
 
 - Anim slideshow

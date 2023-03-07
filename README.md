@@ -1,28 +1,47 @@
-# oc-p11-Kasa
+[![Node](https://img.shields.io/badge/nodejs-333333?logo=nodedotjs)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/react-20232A?logo=react)](https://reactjs.org/)
+[![Sass](https://img.shields.io/badge/sass-F8F8F8?logo=sass)](https://sass-lang.com/)
 
-Développez une application Web avec React et React Router
+# oc-p11-Kasa 👋
 
-## Démo
+This project is the n°11 in the [OpenClassrooms Front-End learning path](https://openclassrooms.com/fr/paths/516-developpeur-dapplication-javascript-react).
 
-- https://jeromeabel.github.io/oc-p11-kasa/
+I am a freelance developer. My client is **Kasa**, the leader in private apartment rentals in France. I have to develop their site from models into a SPA with React and React-Router. The data are stored in a .json file (mock).
 
-## Installation
+## ✨ Demo
 
-Le projet a été créé avec create-react-app
+- [Website](https://jeromeabel.github.io/oc-p11-kasa/)
 
-- npm install
+![Screenshots](screens.png)
 
-## Utilisation
+## 🚨 Prerequisites
 
-- npm run start
+To get and build the project you will need to install :
 
-## Contexte
+- [NodeJS](https://nodejs.org/)
+- A terminal to run commands. If you don't have one, I would recommend to use [Visual Studio Code](https://code.visualstudio.com/), it provides an integrated terminal inside the code editor.
+- Optional : [Git](https://git-scm.com/)
 
-- Je suis développeur freelance
-- Client : Kasa, leader de locations d'appartements entre particuliers en France
-- Refonte du site web : Stack Node & React
+## 🛠️ Installation
 
-## Mission
+The project was created with "create-react-app"
 
-- Développer le projet en React (composants, React Router, données en JSON)
-- Intégrer en CSS les maquettes Desktop et Mobile
+```sh
+$ npm install
+```
+
+## 🚀 Usage
+
+```sh
+$ npm run start
+```
+
+The web browser should be opened automatically at this address : http://localhost:3000/oc-p11-kasa
+
+## 👤 Authors
+
+- [@jeromeabel](https://github.com/jeromeabel)
+
+## 📝 License
+
+- [GNU--GPL--3](https://www.gnu.org/licenses/gpl-3.0.fr.html)
