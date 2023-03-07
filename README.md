@@ -38,7 +38,7 @@ $ npm run start
 
 The web browser should be opened automatically at this address : http://localhost:3000/oc-p11-kasa
 
-## 👤 Authors
+## 👤 Author
 
 - [@jeromeabel](https://github.com/jeromeabel)
 
